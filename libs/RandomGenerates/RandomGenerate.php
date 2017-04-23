@@ -1,4 +1,4 @@
-<?php namespace App\Libs\RandomGenerates;
+<?php namespace NptNguyen\Libs\RandomGenerates;
 
 /**
 * source: https://www.dougv.com/2010/03/a-strong-password-generator-written-in-php/

@@ -1,4 +1,4 @@
-<?php namespace App\Libs;
+<?php namespace NptNguyen\Libs;
 /**
 * 
 */

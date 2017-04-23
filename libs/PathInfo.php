@@ -1,4 +1,4 @@
-<?php 
+<?php namespace NptNguyen\Libs;
 
 /**
 *  generate from function pathinfo

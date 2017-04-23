@@ -1,4 +1,4 @@
-<?php namespace App\Libs\Hashes;
+<?php namespace NptNguyen\Libs\Hashes;
 /**
 * 
 */

@@ -1,4 +1,4 @@
-<?php namespace App\Libs\SessionTimeouts;
+<?php namespace NptNguyen\Libs\SessionTimeouts;
 use Session;
 class SessionTimeout
 {

@@ -1,4 +1,4 @@
-<?php namespace App\Libs\CaptchaImages;
+<?php namespace NptNguyen\Libs\CaptchaImages;
 
 use Session;
 use App\Libs\SessionTimeouts\SessionTimeout;
