@@ -1,4 +1,5 @@
 <?php
+namespace NptNguyen\Libs\VideoStreams;
 /**
  *  * Description of VideoStream
  *   *

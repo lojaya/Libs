@@ -24,19 +24,20 @@ class GuestInfo
 	    }else{
 	        $ip = $remote;
 	    }
-	    
+	    return $ip;
 	    //laravel $request->ip();
-	    $this->setIp($ip);
 	}
 	public function getLocationInfoByIp($ip = ''){
+		$ip_temp = null;
 		//set ip
 		if($ip != ''){
-			$this->setIp($ip);
+			$ip_temp = $this->getIpAddress();
 		}else{
-			$this->getIpAddress();
+			$ip_temp = $ip;
 		}
-	    if(!empty($this->getIp()) && $this->getIp() != '::1'){
-	    	$ip_data = @json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip='.$this->getIp()));    
+
+	    if(!empty($ip_temp) && $ip_temp != '::1'){
+	    	$ip_data = @json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip='.$ip_temp));    
 		    if($ip_data && $ip_data->geoplugin_countryName != null){
 		        $this->location_info['country'] = $ip_data->geoplugin_countryCode;
 		        $this->location_info['city'] = $ip_data->geoplugin_city;
@@ -111,12 +112,6 @@ class GuestInfo
 	    }
 	    //'pattern'    => $pattern
 	    return $this->get_browser;
-	}
-	public function setIp($ip_address){
-		$this->ip = $ip_address;
-	}
-	public function getIp(){
-		return $this->ip;
 	}
 	public function setUserAgent($agent){
 		$this->user_agent = $agent;
