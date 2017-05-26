@@ -1,4 +1,5 @@
 <?php namespace NptNguyen\Libs\GetLinkVideos;
+use NptNguyen\Libs\PathInfo;
 /**
 * 
 */
@@ -98,11 +99,16 @@ class GetLinkVideo
 		// var_dump($this->cookie);exit;
 	    return $page;
 	}
+	protected function getIdZingTv($link){
+		//http://tv.zing.vn/video/Juushin-Enbu-Hero-Tales-Tap-1/IWZC6IUA.html
+		$path_info = new PathInfo($link);
+		return $path_info->getFilename();
+	}
 	//ok
 	function getLinkZingTv($link){
-		// $data = $this->curl($link);
 		//http://tv.zing.vn/video/Juushin-Enbu-Hero-Tales-Tap-1/IWZC6IUA.html
-		$id = 'IWZC6IUA';
+
+		$id = $this->getIdZingTv($link);
 		$api = 'http://api.tv.zing.vn/3.0/media/info?api_key=d04210a70026ad9323076716781c223f&media_id='.$id;//Link API
 		$data = @file_get_contents($api);
 		// var_dump($data);
